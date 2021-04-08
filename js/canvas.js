@@ -144,6 +144,78 @@ ctx.lineTo(1000, 400);
 ctx.fill();
 
 
+// Arbol 1
+ctx.fillStyle = `rgba(109, 61, 20, ${alfa})`;
+ctx.fillRect(100, 200, 20, 150);
+
+ctx.beginPath()
+ctx.fillStyle = `rgba(27, 153, 139, ${alfa})`;
+ctx.arc(140, 180, 40, 0, 2*Math.PI);
+ctx.fill();
+
+ctx.beginPath()
+ctx.fillStyle = `rgba(132, 195, 24, ${alfa})`;
+ctx.arc(80, 190, 30, 0, 2*Math.PI);
+ctx.fill();
+
+ctx.beginPath()
+ctx.fillStyle = `rgba(43, 151, 32, ${alfa})`;
+ctx.arc(110, 200, 50, 0, 2*Math.PI);
+ctx.fill();
+
+ctx.beginPath()
+ctx.fillStyle = `rgba(16, 73, 17, ${alfa})`;
+ctx.arc(120, 230, 30, 0, 2*Math.PI);
+ctx.fill();
+ 
+// Arbol 2
+ctx.fillStyle = `rgba(109, 61, 20, ${alfa})`;
+ctx.fillRect(900, 200, 20, 150);
 
 
+ctx.beginPath()
+ctx.fillStyle = `rgba(16, 73, 17, ${alfa})`;
+ctx.moveTo(850, 300);
+ctx.lineTo(910, 200);
+ctx.lineTo(970, 300);
+ctx.fill();
+
+ctx.beginPath()
+ctx.fillStyle = `rgba(132, 195, 24, ${alfa})`;
+ctx.moveTo(850, 250);
+ctx.lineTo(910, 150);
+ctx.lineTo(970, 250);
+ctx.fill();
+
+ctx.beginPath()
+ctx.fillStyle = `rgba(43, 151, 32, ${alfa})`; 
+ctx.moveTo(850, 200);
+ctx.lineTo(910, 100);
+ctx.lineTo(970, 200);
+ctx.fill();
+
+// Tierra 1
+ctx.beginPath();
+ctx.fillStyle = `rgba(132, 195, 24, ${alfa})`;
+ctx.arc(0, 500, 250, 3.15, 2*Math.PI);
+ctx.fill();
+
+//Lienas Curvas
+ctx.beginPath();
+ctx.fillStyle =`rgba(0, 100, 10, ${alfa})`;
+ctx.moveTo(0, 500);
+ctx.bezierCurveTo(0, 470, 50, 470, 50, 500);
+ctx.bezierCurveTo(50, 470, 100, 470, 100, 500);
+ctx.bezierCurveTo(100, 470, 150, 470, 150, 500);
+ctx.bezierCurveTo(150, 470, 200, 470, 200, 500);
+ctx.bezierCurveTo(200, 470, 250, 470, 250, 500);
+ctx.fill();
+
+
+// Tierra 2
+ctx.beginPath();
+ctx.fillStyle = `rgba(16, 73, 17, ${alfa})`;
+ctx.arc(900, 600, 250, 3.15, 2*Math.PI);
+ctx.fill();
+ 
  
