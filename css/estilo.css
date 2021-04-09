@@ -28,6 +28,12 @@ body{
     display: none;
 
 }
+#temporizador {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
 @media all and (orientation: portrait){
     #contenedor{
         display: none;

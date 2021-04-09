@@ -8,7 +8,7 @@ let frame = window.requestAnimationFrame ||
 
 let canvas = document.querySelector("#lienzo");
 let ctx = canvas.getContext("2d"); //getContext() retorna un contexto de dibujo en el lienzo, o null si el identificador del contexto no está soportado.
-
+let temporizador = document.querySelector("#temporizador span");
 
 /*====================================
 PROPIEDADES DEL OBJETO JUGADOR
@@ -683,7 +683,9 @@ let datos = {
     left: false,
     right: false,
     up: false,
-    down: false
+    down: false,
+    fotograma: 0,
+    segundos: 0
 }
 /*====================================
 METODOS DEL OBJETO JUEGO
@@ -817,6 +819,8 @@ let juego = {
                 jugador.x = 280;
                 jugador.y = 55;
                 jugador.movimientoX = 0;
+                datos.segundos = 0;
+                datos.fotograma = 0;
             }
             // COLISIONES DE DER A IZQ
             if (colisiones() && jugador.x1 - jugador.movimientoX > bloques[i].x2) {
@@ -824,6 +828,8 @@ let juego = {
                 jugador.x = 280;
                 jugador.y = 55;
                 jugador.movimientoX = 0;
+                datos.segundos = 0;
+                datos.fotograma = 0;
             }
             // COLISIONES DE ARRIBA HACIA ABAJO
             if (colisiones() && jugador.y2 < bloques[i].y1 + jugador.movimientoY) {
@@ -831,6 +837,8 @@ let juego = {
                 jugador.x = 280;
                 jugador.y = 55;
                 jugador.movimientoY = 0;
+                datos.segundos = 0;
+                datos.fotograma = 0;
             }
             // COLISIONES DE ABAJO HACIA ARRIBA
             if (colisiones() && jugador.y1 - jugador.movimientoY > bloques[i].y2) {
@@ -838,15 +846,35 @@ let juego = {
                 jugador.x = 280;
                 jugador.y = 55;
                 jugador.movimientoY = 0;
+                datos.segundos = 0;
+                datos.fotograma = 0;
             }
 
         }
 
+        
+        /*====================================
+            TEMPORIZADOR
+        =====================================*/
+        if(datos.fotograma >= 60){
+
+            datos.fotograma = 0;
+            datos.segundos++;
+
+            temporizador.innerHTML = datos.segundos;
+        }else{
+            datos.fotograma++;
+        }
         /*====================================
             CANVAS
         =====================================*/
 
         juego.canvas();
+
+        
+        /*====================================
+            ACTIVAR LIENA DE TIEMPO PARA EL METODO TIEMPO
+        =====================================*/
         frame(juego.tiempo)
 
     },
